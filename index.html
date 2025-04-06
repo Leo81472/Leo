@@ -178,9 +178,12 @@
 <body>
 
     <div class="container">
-        <div class="announcement" style="background-color: #fff3cd; color: #856404; padding: 15px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ffeeba; text-align: center;">
+        <div class="announcement" style="background-color: #fff3cd; color: #856404; padding: 15px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ffeeba; text-align: center; position: relative;">
+            <button onclick="hideAnnouncement()" style="position: absolute; right: 10px; top: 10px; background: none; border: none; font-size: 1.2em; cursor: pointer; color: #856404;">×</button>
             <span style="font-weight: bold;">2025/4/7 16:19:46</span>
-            <p style="margin: 5px 0 0 0;">底层代码全部重建，请大家体验！</p>
+            <p style="margin: 5px 0 0 0;">底层代码全部重建，请大家体验！（版本号：1.0.0）</p>
+            <span style="font-weight: bold;">2025/4/7 17:58:46</span>
+            <p style="margin: 5px 0 0 0;">推出更新，请大家体验！（版本号：1.1.0beta）</p>
         </div>
         <header>
             <h1>金俊良的个人网站</h1>
@@ -260,6 +263,10 @@
     </div>
     <script>
         let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+        function hideAnnouncement() {
+            document.querySelector('.announcement').style.display = 'none';
+        }
+
         let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
 
         // 确保所有用户都能看到评论
